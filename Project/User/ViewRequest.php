@@ -39,7 +39,7 @@ include("Head.php");
 	  
 	  <?php 
 		$i=0;
-		$selqry="SELECT * FROM `tbl_request` r inner join tbl_user u on u.user_id=r.user_id inner join tbl_shape s on s.shape_id=r.shape_id inner join tbl_category c on c.category_id=r.category_id where u.user_id=$_SESSION[uid]";
+		$selqry="SELECT * FROM `tbl_request` r inner join tbl_user u on u.user_id=r.user_id inner join tbl_shape s on s.shape_id=r.shape_id inner join tbl_category c on c.category_id=r.category_id where u.user_id=$_SESSION[uid] and request_status>0";
 		$res=$con->query($selqry);
 		while($data=$res->fetch_assoc())
 		{

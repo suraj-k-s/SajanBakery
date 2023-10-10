@@ -30,22 +30,22 @@
 <form id="form1" name="form1" method="post" action="">
   <table width="396" height="277" border="2">
     <tr>
-      <td width="138">Name</td>
+      <td width="138">NAME</td>
       <td width="242"><label for="txt_newname"></label>
       <input type="text" name="txt_newname" id="txt_newname" value="<?php echo $data['user_name'];?>"/></td>
     </tr>
     <tr>
-      <td>Email</td>
+      <td>EMAIL</td>
       <td><label for="txt_newemail"></label>
       <input type="text" name="txt_newemail" id="txt_newemail" value="<?php echo $data['user_email'];?>"/></td>
     </tr>
     <tr>
-      <td>Delivery Address</td>
+      <td>DELIVERY ADDRESS</td>
       <td><label for="txt_newda"></label>
       <input type="text" name="txt_newda" id="txt_newda" value="<?php echo $data['user_deliveryaddress'];?>"/></td>
     </tr>
     <tr>
-      <td>Contact</td>
+      <td>CONTACT</td>
       <td><label for="txt_newcontact"></label>
       <input type="text" name="txt_newcontact" id="txt_newcontact" value="<?php echo $data['user_contact'];?>" /></td>
     </tr>

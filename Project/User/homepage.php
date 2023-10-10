@@ -191,7 +191,7 @@
                 <h1 class="display-4 text-uppercase">Explore Our Cakes</h1>
             </div>
             <div class="tab-class text-center">
-                <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase border-inner p-4 mb-5">
+                <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase  p-4 mb-5">
                     <li class="nav-item">
                         <a class="nav-link text-white active" data-bs-toggle="pill" href="#tab-1">Birthday</a>
                     </li>
@@ -443,7 +443,7 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
-                    <div class="bg-primary border-inner text-center text-white p-5">
+                    <div class="bg-primary border-inner  text-center text-white p-5">
                         <h4 class="text-uppercase mb-3">Birthday Cake</h4>
                         <p>Make your birthday truly extraordinary with our show-stopping customized cakes and indulge in the sublime taste of joy as our skilled artisans craft exquisite birthday cakes tailored to your dreams, transforming your special day into an unforgettable celebration. </p>
                       
@@ -465,7 +465,7 @@
                 </div>
                 <div class="col-lg-12 col-md-6 text-center">
                     <h1 class="text-uppercase text-light mb-4">30% Discount For BIRTHDAYS AND WEDDINGS</h1>
-                    <a href="SendRequest.php" class="btn btn-primary border-inner py-3 px-5">Order Now</a>
+                    <a href="SendRequest.php" class="btn btn-primary  py-3 px-5">Order Now</a>
                 </div>
             </div>
         </div>

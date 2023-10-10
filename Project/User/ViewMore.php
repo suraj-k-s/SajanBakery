@@ -2,10 +2,13 @@
 ob_start();
 include("Head.php");
 include("../Assets/Connection/Connection.php");
-$selQry="select * from tbl_product where product_id = '".$_GET["id"]."' ";
+
+$selQry="select * from tbl_product where product_id = '".$_GET["vid"]."' ";
+
  $res=$con->query($selQry);
 	  if($row=$res->fetch_assoc())
 	  {
+      
     
 
 ?>
@@ -49,6 +52,7 @@ $selQry="select * from tbl_product where product_id = '".$_GET["id"]."' ";
 }
 include("Foot.php");
 ob_flush();
+
 ?>
 
 </html>

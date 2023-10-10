@@ -212,12 +212,12 @@ include("Head.php");
       <th scope="row">CONTACT<sup>*</sup></th>
       <td><p>
         <label for="txt_cntct"></label>
-        <input type="text" name="txt_cntct" required   id="txt_cntct" />
+        <input type="text" name="txt_cntct"  id="txt_cntct"  required pattern="[0-9]{10}" title="Contact Number should only contain 10 numbers"/>
       </p></td>
     </tr>
     <tr>
       <th colspan="2" scope="row">
-      <input type="submit" name="btn_sr" id="btn_sr" value="SEND" />
+      <input type="submit" name="btn_sr" id="btn_sr" value="ORDER" />
       <span id="totalAmount" align="right"></span>
       <input type="hidden" name="totalText" id="totalText" />
 

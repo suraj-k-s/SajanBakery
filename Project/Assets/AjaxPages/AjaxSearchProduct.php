@@ -177,7 +177,7 @@ include("../Connection/Connection.php");
                                             
                                         <a href="javascript:void(0)" onclick="addCart('<?php echo $rowS["product_id"]; ?>')" class="btn btn-success btn-block">Add to Cart</a>
 
-                                        <a href="ViewMore.php?id=<?php echo $rowS["product_id"]; ?>" class="btn btn-warning btn-block">View More</a>
+                                        <a href="ViewMore.php?vid=<?php echo $rowS["product_id"]; ?>" class="btn btn-warning btn-block">View More</a>
                                     </div>
                                 </div>
                             </div>

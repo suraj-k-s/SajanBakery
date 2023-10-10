@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2023 at 09:57 AM
+-- Generation Time: Oct 10, 2023 at 12:28 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -61,16 +61,11 @@ CREATE TABLE `tbl_booking` (
 --
 
 INSERT INTO `tbl_booking` (`booking_id`, `booking_date`, `booking_status`, `booking_amount`, `user_id`) VALUES
-(1, '2023-10-03', '1', 50, 1),
-(2, '2023-10-03', '1', 50, 1),
-(3, '2023-10-03', '1', 50, 1),
-(4, '2023-09-30', '2', 30, 19),
-(5, '2023-10-03', '1', 50, 1),
-(6, '2023-10-03', '1', 50, 1),
-(7, '2023-10-03', '2', 900, 9),
-(8, '2023-10-03', '0', 0, 9),
-(9, '2023-10-03', '1', 50, 1),
-(10, '2023-10-05', '1', 210, 34);
+(22, '2023-10-10', '2', 50, 34),
+(23, '2023-10-10', '2', 1550, 34),
+(24, '2023-10-10', '0', 0, 0),
+(25, '2023-10-10', '2', 4200, 35),
+(26, '2023-10-10', '2', 30, 36);
 
 -- --------------------------------------------------------
 
@@ -91,24 +86,15 @@ CREATE TABLE `tbl_cart` (
 --
 
 INSERT INTO `tbl_cart` (`cart_id`, `cart_quantity`, `product_id`, `booking_id`, `cart_status`) VALUES
-(1, '1', 2, 1, 4),
-(2, '1', 3, 2, 4),
-(3, '1', 17, 3, 4),
-(4, '1', 18, 3, 4),
-(5, '1', 1, 3, 2),
-(6, '1', 4, 3, 2),
-(8, '1', 1, 4, 2),
-(9, '1', 4, 5, 1),
-(10, '1', 8, 5, 1),
-(11, '1', 12, 5, 1),
-(12, '1', 10, 6, 1),
-(13, '1', 11, 7, 1),
-(14, '1', 2, 8, 0),
-(15, '1', 2, 9, 1),
-(16, '1', 1, 10, 4),
-(17, '1', 2, 10, 3),
-(18, '1', 3, 10, 4),
-(19, '1', 4, 10, 3);
+(33, '1', 3, 22, 1),
+(34, '1', 2, 23, 1),
+(35, '1', 3, 24, 0),
+(36, '1', 14, 23, 1),
+(37, '1', 11, 25, 1),
+(38, '1', 12, 25, 1),
+(39, '1', 16, 25, 1),
+(40, '1', 18, 25, 1),
+(41, '1', 1, 26, 4);
 
 -- --------------------------------------------------------
 
@@ -180,7 +166,8 @@ CREATE TABLE `tbl_complaint` (
 INSERT INTO `tbl_complaint` (`complaint_id`, `complaint_content`, `complaint_status`, `complaint_reply`, `user_id`, `complaint_date`) VALUES
 (1, 'no fast reply', '1', 'we will do better', 1, '2023-09-18'),
 (2, 'no very good cake\r\n', '1', 'angne veran vazhi illalo', 1, '2023-09-28'),
-(3, 'hello my cake was hot!!\r\n\r\n', '1', 'podaa', 5, '2023-10-03');
+(3, 'hello my cake was hot!!\r\n\r\n', '1', 'podaa', 5, '2023-10-03'),
+(4, 'very bad service\r\n', '1', 'ok we will do better', 34, '2023-10-10');
 
 -- --------------------------------------------------------
 
@@ -338,8 +325,9 @@ CREATE TABLE `tbl_request` (
 --
 
 INSERT INTO `tbl_request` (`request_id`, `request_date`, `request_details`, `request_image`, `delivery_location`, `delivery_time`, `delivery_contact`, `request_kg`, `shape_id`, `category_id`, `icing_id`, `color_id`, `topping_id`, `user_id`, `request_fordate`, `request_status`, `request_amount`) VALUES
-(6, '2023-10-03', 'ASDFGHJNB XSE', 'cakech.jpg', '12rtyjhgfdsa', '15:05', '95260090705', '1.5', 2, 3, 3, 3, 3, 9, '2023-10-25', 1, '1350'),
-(7, '2023-10-05', 'aSCVXBC Xz', 'cakeco.jpg', '24rwefdscxzvcxz', '02:18', '123456789876543', '2.5', 1, 1, 1, 1, 1, 34, '2023-10-25', 0, '1812.5');
+(16, '2023-10-10', 'qwertyuiopjhgf', 'Image Not Found', 'qwertyuioiuydsdf', '18:00', '9526009070', '5.0', 1, 1, 1, 4, 0, 34, '2023-10-19', 0, '3500'),
+(17, '2023-10-10', 'Ashgfsgdfg', 'abc.png', 'wertygftresfgdfd', '15:23', '9526009070', '1.0', 3, 5, 2, 2, 1, 34, '2023-10-20', 0, '825'),
+(19, '2023-10-10', '0', 'adhin.jpg', 'Opp metro piller 511\r\nedapally', '16:38', '8590903116', '2.5', 4, 5, 2, 1, 3, 35, '2024-10-13', 1, '2050');
 
 -- --------------------------------------------------------
 
@@ -365,7 +353,9 @@ INSERT INTO `tbl_review` (`review_id`, `review_datetime`, `product_id`, `user_re
 (2, '2023-09-18 22:49:08', 2, 'asddff', '0', 'Alby'),
 (3, '2023-09-18 22:49:44', 2, 'cake!!!!!', '0', 'jaganathan'),
 (4, '2023-09-18 22:50:09', 2, 'g', '2', 'bob'),
-(5, '2023-10-05 23:55:33', 1, 'good', '4', 'Alby');
+(5, '2023-10-05 23:55:33', 1, 'good', '4', 'Alby'),
+(6, '2023-10-09 19:22:17', 3, 'ver good', '4', 'bob'),
+(7, '2023-10-10 15:48:47', 1, 'please improve your qua;ity\n', '1', 'xz');
 
 -- --------------------------------------------------------
 
@@ -435,7 +425,9 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `user_name`, `user_contact`, `user_email`, `place_id`, `user_password`, `user_gender`, `user_image`, `user_deliveryaddress`) VALUES
-(34, 'ALBY BAIJU', 9526009705, 'alby02@gmail.com', 15, 'Alby4432', 'Male', 'testimonial-3.jpg', 'PIDIYANCHERRIL H,ALAPARA,MANIMALA P.O');
+(34, 'ALBY BAIJU', 9526009705, 'alby02@gmail.com', 15, 'Alby4432', 'Male', 'testimonial-3.jpg', 'PIDIYANCHERRIL H,ALAPARA,MANIMALA P.O'),
+(35, 'Adhin Shaji', 8590903116, 'adhinshaji7@gmail.com', 23, 'adhinSHAJI123', 'Male', 'adhin.jpg', 'Opp metro piller 511\r\nedapally \r\nernakulam'),
+(36, 'xz', 9786543228, 'abc@gmail.com', 22, 'abc%eWghjghjgf98@W', 'Male', 'adhin.jpg', 'vaitilla p.o.,ernakulam,kerala');
 
 --
 -- Indexes for dumped tables
@@ -545,13 +537,13 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_booking`
 --
 ALTER TABLE `tbl_booking`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `tbl_category`
@@ -569,7 +561,7 @@ ALTER TABLE `tbl_color`
 -- AUTO_INCREMENT for table `tbl_complaint`
 --
 ALTER TABLE `tbl_complaint`
-  MODIFY `complaint_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `complaint_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_district`
@@ -599,13 +591,13 @@ ALTER TABLE `tbl_product`
 -- AUTO_INCREMENT for table `tbl_request`
 --
 ALTER TABLE `tbl_request`
-  MODIFY `request_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `request_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tbl_review`
 --
 ALTER TABLE `tbl_review`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_shape`
@@ -623,7 +615,7 @@ ALTER TABLE `tbl_topping`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

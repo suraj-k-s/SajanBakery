@@ -316,9 +316,9 @@ include("../Assets/Connection/Connection.php");
                 $selC = "select * from tbl_booking where user_id='" .$_SESSION["uid"]. "'and booking_status='0'";
                 $rs = $con->query($selC);
                 $row=$rs->fetch_assoc();
-                 $_SESSION["bid"] = $row["booking_id"];
+        
                 
-                $upQry1 = "update tbl_booking set booking_date=curdate(),booking_amount='".$amt."',booking_status='1' where user_id='" .$_SESSION["uid"]. "'";
+                $upQry1 = "update tbl_booking set booking_date=curdate(),booking_amount='".$amt."',booking_status='1' where user_id='" .$_SESSION["uid"]. "' and booking_status=0 ";
 				$con->query($upQry1);
 				
 				 $upQry1 = "update tbl_cart set cart_status='1' where booking_id='" .$row["booking_id"]. "'";
@@ -327,9 +327,9 @@ include("../Assets/Connection/Connection.php");
 					
 					
 					?>
-                    <script>
-					window.location="Payment.php";
-					</script>
+                        <script>
+                            window.location="Payment.php?bid=<?php echo $row["booking_id"] ?>";
+                        </script>
                     <?php
                    
          		  	
@@ -343,6 +343,19 @@ include("../Assets/Connection/Connection.php");
 
 
     ?>
+
+<script type="text/javascript"> 
+        function back() { 
+            window.history.forward();  
+        } 
+          
+        // Force Client to forward to last (current) Page.
+        setTimeout("back()", 0); 
+          
+        window.onunload = function () { null }; 
+</script>
+
+
     <body onload="recalculateCart()" style="padding:0px">
     <?php
     ob_start();

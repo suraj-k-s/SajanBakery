@@ -9,8 +9,9 @@
 </head>
 <?php
 ob_start();
-include("Head.php");  
-$selQry="select * from tbl_booking b inner join tbl_user u on b.user_id=u.user_id inner join tbl_cart c on c.booking_id = b.booking_id inner join  tbl_product p on p.product_id = c.product_id where booking_status>0 and cart_status>0"; 
+include('../Assets/Connection/Connection.php');
+include("Head.php");   
+$selQry="select * from tbl_booking b inner join tbl_user u on b.user_id=u.user_id inner join tbl_cart c on c.booking_id = b.booking_id inner join  tbl_product p on p.product_id = c.product_id where b.booking_status=2 and cart_status>0"; 
 	$res=$con->query($selQry);
 
 

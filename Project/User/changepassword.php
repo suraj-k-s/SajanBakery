@@ -48,17 +48,17 @@ include("Head.php");
 <form id="form1" name="form1" method="post" action="">
   <table width="374" height="256" border="1">
     <tr>
-      <td width="143" height="46">Old Password</td>
+      <td width="143" height="46">OLD PASSWORD</td>
       <td width="215"><label for="txt_opw"></label>
       <input type="text" name="txt_opw" id="txt_opw" /></td>
     </tr>
     <tr>
-      <td height="50">New Password</td>
+      <td height="50">NEW PASSWORD</td>
       <td><label for="txt_npw"></label>
       <input type="text" name="txt_npw" id="txt_npw" /></td>
     </tr>
     <tr>
-      <td>Confirm Password</td>
+      <td>CONFIRM PASSWORD</td>
       <td><label for="txt_cpw"></label>
       <input type="text" name="txt_cpw" id="txt_cpw" /></td>
     </tr>

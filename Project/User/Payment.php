@@ -2,10 +2,27 @@
 ob_start();
 session_start();
 	include("../Assets/Connection/Connection.php");
+
+	if(isset($_POST["btn_cncl"]))
+{
+	$cn = "update tbl_booking set booking_status='0' where booking_id='".$_GET["bid"]."'";
+	$con->query($cn);		
+	$up = "update tbl_cart set cart_status='0' where booking_id='".$_GET["bid"]."'";
+	$con->query($up);
+	?>
+		<script>
+		alert('Payment Canceled');
+			window.location="MYCart.php";
+			</script>
+		<?php
+
+}
+
+
 	if(isset($_POST["btn_pay"]))
 	{
 		
-				$a = "update tbl_booking set booking_status='2' where booking_id='".$_SESSION["bid"]."'";
+				$a = "update tbl_booking set booking_status='2' where booking_id='".$_GET["bid"]."'";
 				if($con->query($a))
 				{
 					
@@ -189,18 +206,18 @@ session_start();
 			<h4>Account</h4>
 			<div class="input-group">
 				<div class="input-box">
-					<input class="name" type="text" name="txtname" id="txtname" placeholder="Full Name" required>
+					<input class="name" type="text" name="txtname" id="txtname" placeholder="Full Name" >
                     
 					<i class="fa fa-user icon" aria-hidden="true"></i>
 				</div>
 				<!-- <div class="input-box">
-					<input class="name" type="text" name="txtnname" id="txtnname" placeholder="Second Name" required>
+					<input class="name" type="text" name="txtnname" id="txtnname" placeholder="Second Name" >
 					<i class="fa fa-user icon" aria-hidden="true"></i>
 				</div> -->
 			</div>
 			<div class="input-group">
 				<div class="input-box">
-					<input class="name" type="email" name="txtemail" id="txtemail" placeholder="Email Address" required>
+					<input class="name" type="email" name="txtemail" id="txtemail" placeholder="Email Address" >
 					<i class="fa fa-envelope icon" aria-hidden="true"></i>
 				</div>
 			</div>	
@@ -234,17 +251,17 @@ session_start();
 			</div>
 			<div class="input-group">
 				<div class="input-box">
-					<input class="name" type="tel" id="txtcardno" name="txtcardno" required data-mask="0000 0000 0000 0000" placeholder="Card Number">
+					<input class="name" type="tel" id="txtcardno" name="txtcardno"  data-mask="0000 0000 0000 0000" placeholder="Card Number">
 					<i class="fa fa-credit-card icon" aria-hidden="true"></i>
 				</div>
 			</div>
 			<div class="input-group">
 				<div class="input-box">
-					<input class="name" type="password" name="txtcvc" id="txtcvc" data-mask="000" placeholder="CVC" required>
+					<input class="name" type="password" name="txtcvc" id="txtcvc" data-mask="000" placeholder="CVC" >
 					<i class="fa fa-user icon" aria-hidden="true"></i>
 				</div>
 				<div class="input-box">
-					<input class="name" type="text" name="txtdate" id="txtdate" data-mask="00 / 00" placeholder="EXP DATE" required>
+					<input class="name" type="text" name="txtdate" id="txtdate" data-mask="00 / 00" placeholder="EXP DATE" >
 					<i class="fa fa-calendar icon" aria-hidden="true"></i>
 				</div>
 			</div>
@@ -252,6 +269,11 @@ session_start();
 			<div class="input-group">
 				<div class="input-box">
 					<input type="submit" name="btn_pay" value="PAY NOW">
+				</div>
+			</div>
+			<div class="input-group">
+				<div class="input-box">
+					<input type="submit" name="btn_cncl" onclick="order_cancel()" value="CANCEL">
 				</div>
 			</div>
 		</form>
@@ -262,5 +284,6 @@ session_start();
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js'></script>
 </html>
 <?php
+
 ob_end_flush();	
 ?>
